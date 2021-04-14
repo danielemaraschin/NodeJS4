@@ -4,7 +4,9 @@ const Fornecedor = require('./Fornecedor')
 const SerializadorFornecedor = require('../../Serializador').SerializadorFornecedor
 
 roteador.get('/', async (requisicao, resposta) => {
+    console.log('Im in index fornecedores');
     const resultados = await TabelaFornecedor.listar()
+    console.log('I have results');
     resposta.status(200)
     const serializador = new SerializadorFornecedor(
         resposta.getHeader('Content-Type')

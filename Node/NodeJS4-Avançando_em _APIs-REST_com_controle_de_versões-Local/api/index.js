@@ -58,4 +58,4 @@ app.use((erro, requisicao, resposta, proximo) => {
     )
 })
 
-app.listen(config.get('api.porta'), () => console.log('A API está funcionando!'))
+app.listen(3000, () => console.log('A API está funcionando!'))
