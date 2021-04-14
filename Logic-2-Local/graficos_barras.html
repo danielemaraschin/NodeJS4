@@ -1,0 +1,34 @@
+<canvas width="600" height="400"></canvas>
+<script>
+
+    function desenhaRetangulo(x, y, largura, altura, cor) {
+        var tela = document.querySelector('canvas');
+        var pincel = tela.getContext('2d');
+
+        pincel.fillStyle = cor;
+        pincel.fillRect(x, y, largura, altura);
+        pincel.strokeStyle = 'black';
+        pincel.strokeRect(x, y, largura, altura);
+    }
+
+    var serie2015 = [50, 25, 20, 5]; //tamanho y que vai se somando
+    var serie2016 = [65, 20, 13, 2];
+    var cores = ['blue', 'green', 'yellow', 'red'];
+
+    function desenhaBarra(x, y, ano, cores) {
+        
+        var somaAltura = 0;
+        
+        for (var i = 0; i < ano.length; i++){
+            var altura = ano[i];
+            desenhaRetangulo ( x, y + somaAltura, 50, altura, cores[i]);
+            somaAltura = somaAltura + altura;
+
+        }
+    }
+
+    desenhaBarra(50, 50, serie2015, cores);
+    desenhaBarra(150, 50, serie2016, cores);
+
+
+</script>
